@@ -64,7 +64,7 @@ def predict():
     if errors:
         return jsonify({'error': errors}), 400
 
-    # 🔹 Detectar missing correctamente
+    # Detectar missing correctamente
     missing = [
         name for name, val in [
             ('SEXO', sexo),
@@ -92,7 +92,7 @@ def predict():
 
     prediction = model.predict(input_data)
 
-    # Convertir a tipo Python (MUY IMPORTANTE)
+    # Convertir a tipo Python 
     response = {
         "prediction": int(prediction[0]),
         "missing": missing
